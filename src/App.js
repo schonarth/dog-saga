@@ -1,10 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { apiCallRequest } from "./features/dogs/dogsSlice";
 import logo from "./logo.svg";
 import "./App.css";
-import { API_CALL_REQUEST } from "./redux";
-import { connect } from "react-redux";
 
-function App({ fetching, dog, onRequestDog, error }) {
+function App() {
+  const dispatch = useDispatch();
+
+  const { dog, error, fetching } = useSelector((state) => state.dogs);
+
+  console.log("render", dog, error, fetching);
+  const onRequestDog = () => dispatch(apiCallRequest());
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,18 +35,4 @@ function App({ fetching, dog, onRequestDog, error }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    fetching: state.fetching,
-    dog: state.dog,
-    error: state.error,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onRequestDog: () => dispatch({ type: API_CALL_REQUEST }),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
