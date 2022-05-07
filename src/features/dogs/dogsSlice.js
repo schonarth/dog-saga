@@ -9,15 +9,13 @@ const dogsSlice = createSlice({
   },
   reducers: {
     apiCallRequest(state, action) {
-      console.log("apiCallRequest", state, action);
       return { ...state, fetching: true, error: null };
     },
     apiCallSuccess(state, action) {
-      console.log("apiCallSuccess", state, action);
       return { ...state, fetching: false, dog: action.payload };
     },
     apiCallFailure(state, action) {
-      return { ...state, fetching: false, dog: null, error: action.error };
+      return { ...state, fetching: false, dog: null, error: action.payload };
     },
   },
 });

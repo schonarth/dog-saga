@@ -9,7 +9,6 @@ function App() {
 
   const { dog, error, fetching } = useSelector((state) => state.dogs);
 
-  console.log("render", dog, error, fetching);
   const onRequestDog = () => dispatch(apiCallRequest());
 
   return (
