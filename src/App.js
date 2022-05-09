@@ -14,7 +14,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={dog || logo} className="App-logo" alt="logo" />
+        <img
+          src={dog || logo}
+          className={`App-logo ${!dog && "spin"}`}
+          alt={`${(dog && "Doggie!") || "React logo"}`}
+        />
         <h1 className="app-title">Welcome to the Dog Saga</h1>
 
         {dog ? (

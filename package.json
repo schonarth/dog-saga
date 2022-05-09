@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.17.9",
     "@reduxjs/toolkit": "^1.8.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
-    "@testing-library/user-event": "14.1.1",
     "axios": "^0.27.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -45,6 +43,9 @@
     "@babel/plugin-transform-runtime": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "14.1.1",
     "babel-jest": "^28.1.0",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -54,7 +55,9 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "jest-fetch-mock": "^3.0.3",
     "jsdom": "^19.0.0",
+    "msw": "^0.39.2",
     "react-test-renderer": "^18.1.0"
   }
 }
